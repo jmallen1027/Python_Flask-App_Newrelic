@@ -15,6 +15,7 @@ Please be aware this app is still in development. You may see multiple lines com
 and left the packages in the requirments.txt file. The application requires additional steps after starting it up. But it functions. I'll list the commands and instructions below. 
 
 **Running the app with Docker Compose** 
+
 docker-compose build (in the user directory) 
 docker-compose up
 
@@ -27,7 +28,7 @@ CREATE DATABASE book; ## Create user and order Databases to. Put order inbetween
 docker exec -it book_app /bin/bash ## Do this for the user and order service as well. 
 flask db upgrade 
 
-**API Notes **
+****API Url Changes****
 
 If running locally and not in docker you will need to change the URL settings in the code. Please see below for running locally. 
 
