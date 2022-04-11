@@ -38,7 +38,6 @@ USER_API_URL = 'http://127.0.0.1:5001/api/user
 #USER_API_URL = 'http://user-app:5001/api/user' ## user-app is the container name. If yours is something else then change it ##
 
 /frontend/api/__init__.py
-
 USER_API_URL = 'http://127.0.0.1:5001'
 BOOK_API_URL = 'http://127.0.0.1:5002'
 ORDER_API_URL = 'http://127.0.0.1:5003'
