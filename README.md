@@ -38,7 +38,9 @@ If running locally and not in docker you will need to change the URL settings in
 
 /order/routes.py 
 
+
 USER_API_URL = 'http://127.0.0.1:5001/api/user 
+
 #USER_API_URL = 'http://user-app:5001/api/user' ## user-app is the container name. If yours is something else then change it ##
 
 /frontend/api/__init__.py
