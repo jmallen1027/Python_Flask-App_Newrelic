@@ -21,15 +21,23 @@ and left the packages in the requirments.txt file. The application requires addi
 **Running the app with Docker Compose** 
 
 docker-compose build (in the user directory) 
+
 docker-compose up
 
 docker exec -it mysql_db_1 /bin/bash
+
 mysql -uroot -p
+
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PASSWORD;
+
 CREATE USER 'newrelic'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PASSWORD';
+
 FLUSH PRIVILEGES;
+
 CREATE DATABASE book; ## Create user and order Databases to. Put order inbetween `` or change the name. 
+
 docker exec -it book_app /bin/bash ## Do this for the user and order service as well. 
+
 flask db upgrade 
 
 ****API Url Changes****
