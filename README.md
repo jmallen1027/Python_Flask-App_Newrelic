@@ -19,6 +19,7 @@ Please be aware this app is still in development. You may see multiple lines com
 and left the packages in the requirments.txt file. The application requires additional steps after starting it up. But it functions. I'll list the commands and instructions below. 
 
 **Running the app with Docker Compose** 
+Run these commands after building and running the docker compose file. The app will spin up with some errors with the database. Just docker exec into the DB and Python Services and run these commands.
 
 docker-compose build (in the user directory) 
 
