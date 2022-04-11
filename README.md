@@ -1,10 +1,8 @@
 **Overview**
-This project is for learning Microservices Technologies by using Observability Tools such as New Relic, Jaeger, and others. The application is an online book store where a user can create an account, log in, and purchase a book. The book store admin is responsible for the inventory and pricing. This project is 
-still in development. 
+This project is for learning Microservices Technologies by using Observability Tools such as New Relic, Jaeger, and others. The application is an online book store where a user can create an account, log in, and purchase a book. The book store admin is responsible for the inventory and pricing. This project is still in development. 
 
 **Run the app**
-The app includes four services consisting of a Frontend, User service, Product(Book Service), and order service. The application can be spun up with individual Dockerfiles, Docker Compose, and individually in a 
-Python virtual environment.
+The app includes four services consisting of a Frontend, User service, Product(Book Service), and order service. The application can be spun up with individual Dockerfiles, Docker Compose, and individually in a Python virtual environment.
 
 **Databases** 
 The application includes configurations for both Sqlite and Mysql in the services app.py files. All four services share a MySQL server in the Docker compose file. 
@@ -25,7 +23,7 @@ mysql -uroot -p
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PASSWORD;
 CREATE USER 'newrelic'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PASSWORD';
 FLUSH PRIVILEGES;
-CREATE DATABASE book; ## Create user, `order` as well
+CREATE DATABASE book; ## Create user and order Databases to. Put order inbetween `` or change the name. 
 docker exec -it book_app /bin/bash ## Do this for the user and order service as well. 
 flask db upgrade 
 
@@ -34,10 +32,12 @@ flask db upgrade
 If running locally and not in docker you will need to change the URL settings in the code. Please see below for running locally. 
 
 /order/routes.py 
+
 USER_API_URL = 'http://127.0.0.1:5001/api/user 
 #USER_API_URL = 'http://user-app:5001/api/user' ## user-app is the container name. If yours is something else then change it ##
 
 /frontend/api/__init__.py
+
 USER_API_URL = 'http://127.0.0.1:5001'
 BOOK_API_URL = 'http://127.0.0.1:5002'
 ORDER_API_URL = 'http://127.0.0.1:5003'
