@@ -7,9 +7,9 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = '2EApHm8Kyfy_sBLoafFHpQ'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Vikings123!@localhost:3306/order'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:$ENTER_YOUR_PW_HERE!@localhost:3306/order'
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./database/order.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Vikings123!@db:3306/order'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:$ENTER_YOUR_PW_HERE@db:3306/order'
 app.register_blueprint(order_blueprint)
 
 init_app(app)
