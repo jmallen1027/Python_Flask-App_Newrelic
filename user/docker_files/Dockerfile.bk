@@ -1,0 +1,9 @@
+FROM python:3.8
+COPY requirements.txt /userapp/requirements.txt
+WORKDIR /userapp
+RUN pip3 install -r requirements.txt
+copy . /userapp
+#ENTRYPOINT ["python"]
+RUN chmod 777 ./startup.sh
+#CMD ["app.py"]
+CMD ["./startup.sh"]

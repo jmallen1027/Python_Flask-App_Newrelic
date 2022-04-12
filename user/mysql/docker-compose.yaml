@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+ mysql_sr:
+          #image: new_mysql
+    build:
+        context: .
+    environment:
+        - MYSQL_ROOT_PASSWORD=Vikings123!
+    ports:
+        - "3306:3306"

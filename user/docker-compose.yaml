@@ -1,0 +1,52 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:latest
+          #build:
+            #context: ./mysql
+    cap_add:
+        - SYS_NICE
+    environment:
+            - MYSQL_ROOT_PASSWORD=Vikings123!
+    ports:
+        - "3306:3306"
+
+  userapp:
+    container_name: user-app
+    build:
+         context: .
+    links:
+            #- "custom_mysql_cont"
+      - "db"
+    ports:
+      - "5001:5001"
+    restart: always
+
+  bookapp:
+    container_name: book-app
+    build:
+         context: ../product
+    links:
+      - "db"
+    ports:
+      - "5002:5002"
+    restart: always
+
+  orderapp:
+    container_name: order-app
+    build:
+         context: ../order
+    links:
+      - "db"
+    ports:
+      - "5003:5003"
+    restart: always
+
+  front_endapp:
+    container_name: front_end
+    build:
+          context: ../frontend
+    ports:
+       - "5000:5000"
+    restart: always
+

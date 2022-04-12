@@ -1,0 +1,10 @@
+FROM python:3.8
+COPY requirements.txt /orderapp/requirements.txt
+WORKDIR /orderapp
+RUN pip3 install -r requirements.txt
+copy . /orderapp
+#ENTRYPOINT ["python"]
+RUN chmod 777 ./startup.sh
+#RUN flask db init && flask db upgrade
+#CMD ["app.py"]
+CMD ["./startup.sh"]

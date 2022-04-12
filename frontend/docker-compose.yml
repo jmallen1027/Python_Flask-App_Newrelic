@@ -1,0 +1,62 @@
+version: "3.8"
+
+services:
+  frontend:
+    container_name: frontend-service-c
+    build:
+      context: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - frontend:/frontend
+    restart: always
+
+  bookapp:
+    container_name: book-service-c
+    build:
+      context: ../product
+    ports:
+      - "5002:5002"
+    depends_on:
+      - mysql_flask
+    #volumes:
+      #- bookapp:/bookapp
+    restart: always
+
+  userapp:
+    container_name: user-service-c
+    build:
+      context: ../user
+    ports:
+      - "5001:5001"
+    volumes:
+      - userapp:/userapp
+    restart: always
+
+  orderapp:
+    container_name: order-service-c
+    build:
+      context: ../order
+    ports:
+      - "5003:5003"
+    volumes:
+      - orderapp:/orderrapp
+    restart: always
+  
+  mysql_flask:
+    image: mysql:8
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=Vikings123!
+      - MYSQL_DATABASE=book
+
+
+volumes:
+  mysql:
+  frontend:
+  userapp:
+  orderapp:
+  #bookapp:
