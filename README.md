@@ -44,7 +44,7 @@ CREATE DATABASE book; ## Create user and order Databases to. Put order inbetween
 
 docker exec -it book_app /bin/bash ## Do this for the user and order service as well.
 
-flask db upgrade
+flask db upgrade ( May not have to do this. There was a few times I had to do it. Just Register on the website to see if it works.) 
 
 **API Url Changes**
 
