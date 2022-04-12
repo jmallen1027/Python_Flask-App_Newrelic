@@ -1,4 +1,4 @@
 #!/bin/bash
 
-mysql -uroot -pVikings123! -e "create database mel"
-mysql -uroot -pVikings123! -e "create database steve"
+mysql -uroot -p$PASSWORD -e "create database test"
+mysql -uroot -p$PASSWORD -e "create database test"
