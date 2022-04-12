@@ -20,7 +20,7 @@ Running the app with Docker Compose Run these commands after building and runnin
 
 Please update the apps.py and Dockerfiles of each service with the DB password or New Relic Licesnse Keys. There are backup Dockerfiles in the each service directory if you choose not to use New Relic and want to spin it up normally. 
 
-Below are the commands for running the App with Docker Compose. There is a backup Docker Compose File is you want to run the app without MySql named docker-compose-sqlite.bk. Just scip the MYSQL Steps and continue with the migrations. 
+Below are the commands for running the App with Docker Compose. There is a backup Docker Compose File is you want to run the app without MySql named docker-compose.yaml.bk in the frontend directory. Just scip the MYSQL Steps and continue with the migrations. 
 
 I used Post Man to create the books. Send a Post Request to the Book Service API and use form data. There is a screenshot in the the book Details. 
 
