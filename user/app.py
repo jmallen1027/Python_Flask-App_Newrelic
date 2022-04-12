@@ -9,9 +9,9 @@ from routes import user_blueprint
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'QurqcBAmtgdgGxn5OZdypw'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Vikings123!@localhost:3306/user'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:$ENTER_YOUR_PW_HERE@localhost:3306/user'
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./database/user.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Vikings123!@db:3306/user'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:ENTER_YOUR_PW_HERE@db:3306/user'
 models.init_app(app)
 app.register_blueprint(user_blueprint)
 login_manager = LoginManager(app)
